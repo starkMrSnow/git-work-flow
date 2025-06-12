@@ -11,8 +11,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Super Linter
-        uses: github/super-linter@v3
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v6.3.0
         env:
-          DEFAULT_BRANCH: main
+          VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          GITHUB_BEFORE_SHA: ${{ github.event.before || '0000000000000000000000000000000000000000' }}
