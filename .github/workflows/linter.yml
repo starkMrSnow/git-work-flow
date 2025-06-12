@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Important so Super-Linter can compare commits
+          fetch-depth: 0 # Important so Super-Linter can compare commits
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@latest
