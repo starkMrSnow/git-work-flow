@@ -15,5 +15,6 @@ jobs:
         uses: super-linter/super-linter@v6.3.0
         env:
           VALIDATE_ALL_CODEBASE: true
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          GITHUB_BEFORE_SHA: ${{ github.event.before || '0000000000000000000000000000000000000000' }}
