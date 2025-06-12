@@ -7,11 +7,16 @@ jobs:
     name: Lint code base
     runs-on: ubuntu-latest
 
+    # ✅ Add required permissions to allow Super-Linter to report back to GitHub
+    permissions:
+      contents: read
+      statuses: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Important so Super-Linter can compare commits
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@latest
