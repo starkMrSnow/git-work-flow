@@ -1,1 +1,3 @@
 # Git workflow
+
+<!-- Trigger linter -->
